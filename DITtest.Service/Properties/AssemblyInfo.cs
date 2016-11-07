@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DITest.DTO")]
+[assembly: AssemblyTitle("DITtest.Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DITest.DTO")]
+[assembly: AssemblyProduct("DITtest.Service")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0d4a0716-2571-4f66-b19c-87229a7c0e8d")]
+[assembly: Guid("2f00c4f0-75f4-4af4-b35b-0c361aea7069")]
 
 // Version information for an assembly consists of the following four values:
 //
