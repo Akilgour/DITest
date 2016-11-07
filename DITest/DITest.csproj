@@ -198,12 +198,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SaleOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SalesOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -278,6 +280,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DITest.DTO\DITest.DTO.csproj">
+      <Project>{0d4a0716-2571-4f66-b19c-87229a7c0e8d}</Project>
+      <Name>DITest.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DITtest.Service\DITest.Service.csproj">
       <Project>{2f00c4f0-75f4-4af4-b35b-0c361aea7069}</Project>
       <Name>DITest.Service</Name>
