@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DITest.DTO
+namespace DITest.DTO.Models
 {
     public class SaleOrderDTO
     {
