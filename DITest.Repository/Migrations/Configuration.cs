@@ -16,6 +16,7 @@ namespace DITest.Repository.Migrations
         protected override void Seed(DITest.Repository.Context.DITestContext context)
         {
             SaleOrder.Seed(context);
+            SaleOrderItem.Seed(context);
         }
     }
 }

@@ -54,8 +54,13 @@
     <Compile Include="Migrations\201611090224208_InitialCreate.Designer.cs">
       <DependentUpon>201611090224208_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611090319370_SaleOrderItemChangedCostAndQuantityFromStringToInt.cs" />
+    <Compile Include="Migrations\201611090319370_SaleOrderItemChangedCostAndQuantityFromStringToInt.Designer.cs">
+      <DependentUpon>201611090319370_SaleOrderItemChangedCostAndQuantityFromStringToInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData\SaleOrder.cs" />
+    <Compile Include="Migrations\SeedData\SaleOrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611090224208_InitialCreate.resx">
       <DependentUpon>201611090224208_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611090319370_SaleOrderItemChangedCostAndQuantityFromStringToInt.resx">
+      <DependentUpon>201611090319370_SaleOrderItemChangedCostAndQuantityFromStringToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

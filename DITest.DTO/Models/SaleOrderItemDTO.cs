@@ -15,7 +15,7 @@ namespace DITest.DTO.Models
         public int SaleOrderItemId { get; set; }
         public int SaleOrderId { get; set; }
         public string Name { get; set; }
-        public string Cost { get; set; }
-        public string Quantity { get; set; }
+        public int Cost { get; set; }
+        public int Quantity { get; set; }
     }
 }
