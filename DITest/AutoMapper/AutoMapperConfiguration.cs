@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DITest.AutoMapper.SaleOrder;
 using DITest.DTO;
 using DITest.Models;
 using System;
@@ -12,7 +13,9 @@ namespace DITest.AutoMapper
     {
         public static void Configure()
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<SaleOrderDTO, SalesOrder>());
+            Mapper.Initialize(cfg => cfg.CreateMap<SaleOrderDTO, SalesOrder>()
+            .ForMember(dest => dest.FullAddress, opt => opt.MapFrom(src => FullAddress.ResolveCore( src )))
+            );
         }
     }
 }

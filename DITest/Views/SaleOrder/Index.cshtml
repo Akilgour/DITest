@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.AddressLineTwo)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullAddress)
+        </th>
         <th></th>
     </tr>
 
@@ -40,6 +43,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AddressLineTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullAddress)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

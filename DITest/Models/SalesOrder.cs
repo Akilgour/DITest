@@ -11,5 +11,6 @@ namespace DITest.Models
         public string FullName { get; set; }
         public string AddressLineOne { get; set; }
         public string AddressLineTwo { get; set; }
+        public string FullAddress { get; set; }
     }
 }
