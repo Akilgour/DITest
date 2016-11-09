@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DITest.Autofac;
+using DITest.AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,9 @@ namespace DITest
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            AutofacConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
         }
     }
 }

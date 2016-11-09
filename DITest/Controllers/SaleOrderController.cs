@@ -1,4 +1,7 @@
-﻿using DITest.Service.Services.Interfaces;
+﻿using AutoMapper;
+using DITest.DTO;
+using DITest.Models;
+using DITest.Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +22,7 @@ namespace DITest.Controllers
         // GET: SaleOrder
         public ActionResult Index()
         {
-            var foo = service.GetAllSaleOrder();
-            return View();
+             return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
         }
     }
 }
