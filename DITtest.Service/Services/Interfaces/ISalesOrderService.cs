@@ -1,4 +1,4 @@
-﻿using DITest.DTO;
+﻿using DITest.DTO.Models;
 using System.Collections.Generic;
 
 namespace DITest.Service.Services.Interfaces

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DITest.DTO;
+using DITest.DTO.Models;
 using DITest.Models;
 using DITest.Service.Services.Interfaces;
 using System;

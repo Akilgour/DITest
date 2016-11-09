@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DITest.AutoMapper.SaleOrder;
-using DITest.DTO;
+using DITest.DTO.Models;
 using DITest.Models;
 using System;
 using System.Collections.Generic;
