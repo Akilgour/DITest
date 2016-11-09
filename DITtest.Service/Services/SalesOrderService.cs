@@ -1,4 +1,5 @@
 ﻿using DITest.DTO.Models;
+using DITest.Repository.Context;
 using DITest.Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,10 @@ namespace DITest.Service.Services
     {
         public IEnumerable<SaleOrderDTO> GetAllSaleOrder()
         {
-            var list = new List<SaleOrderDTO>();
-            list.Add(new SaleOrderDTO() { SaleOrderId = 1, FullName = "x1", AddressLineOne = "A", AddressLineTwo = "B" });
-            list.Add(new SaleOrderDTO() { SaleOrderId = 2, FullName = "y1", AddressLineOne = "C", AddressLineTwo = "D" });
-            list.Add(new SaleOrderDTO() { SaleOrderId = 3, FullName = "z1", AddressLineOne = "D", AddressLineTwo = "E" });
-
-            return list;
-
+            using (var db = new DITestContext())
+            {
+                return db.SaleOrder.OrderBy(x => x.FullName).ToList();
+            }
         }
     }
 }
