@@ -24,5 +24,10 @@ namespace DITest.Controllers
         {
              return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
         }
+
+        public ActionResult Edit(int saleOrderId)
+        {
+            return View(Mapper.Map<SaleOrderDTO, SalesOrder>(service.GetSaleOrderById(saleOrderId)));
+        }
     }
 }
