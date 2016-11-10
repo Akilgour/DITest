@@ -11,12 +11,16 @@ namespace DITest.Service.Services
 {
     public class SalesOrderService : ISalesOrderService
     {
+        private readonly DITestContext context;
+
+        public SalesOrderService(DITestContext context)
+        {
+            this.context = context;
+        }
+
         public IEnumerable<SaleOrderDTO> GetAllSaleOrder()
         {
-            using (var db = new DITestContext())
-            {
-                return db.SaleOrder.OrderBy(x => x.FullName).ToList();
-            }
+            return context.SaleOrder.OrderBy(x => x.FullName).ToList();
         }
     }
 }

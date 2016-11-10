@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using DITest.Repository.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,7 @@ namespace DITest.Service.Autofac
             // "ThisAssembly" means "any types in the same assembly as the module"
             builder.RegisterAssemblyTypes(ThisAssembly)
                 .Where(t => t.Name.EndsWith("Service"))
-                //.WithParameter("context", new PurchaseOrderManagerContext())
-                //.WithParameter("entityExpressions", new PurchaseOrderCreateDate())
+                .WithParameter("context", new DITestContext())
                 .AsImplementedInterfaces();
         }
     }
