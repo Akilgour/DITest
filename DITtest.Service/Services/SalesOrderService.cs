@@ -22,5 +22,11 @@ namespace DITest.Service.Services
         {
             return context.SaleOrder.OrderBy(x => x.FullName).ToList();
         }
+
+
+        public SaleOrderDTO GetSaleOrderById(int saleOrderId)
+        {
+            return context.SaleOrder.Single(x => x.SaleOrderId == saleOrderId);
+        }
     }
 }
