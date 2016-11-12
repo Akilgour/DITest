@@ -13,9 +13,12 @@ namespace DITest.AutoMapper
     {
         public static void Configure()
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<SaleOrderDTO, SalesOrder>()
-            .ForMember(dest => dest.FullAddress, opt => opt.MapFrom(src => FullAddress.ResolveCore( src )))
-            );
+            Mapper.Initialize(c => {
+                c.CreateMap<SaleOrderDTO, SalesOrder>()
+                    .ForMember(dest => dest.FullAddress, opt => opt.MapFrom(src => FullAddress.ResolveCore(src)));
+                      
+                c.CreateMap<SaleOrderItemDTO, SalesOrderItem>();
+            });
         }
     }
 }

@@ -14,5 +14,8 @@ namespace DITest.Models
         public string AddressLineTwo { get; set; }
         [DisplayName("Full Address")]
         public string FullAddress { get; set; }
+
+       public List<SalesOrderItem> SaleOrderItem { get; set; }
+
     }
 }
