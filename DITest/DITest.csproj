@@ -232,6 +232,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\App\SaleOrder\Edit.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -286,6 +287,7 @@
     <Content Include="Views\SaleOrder\Index.cshtml" />
     <Content Include="Views\SaleOrder\_SaleOrderItems.cshtml" />
     <Content Include="Views\SaleOrder\Edit.cshtml" />
+    <Content Include="Views\SaleOrder\_EditAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
