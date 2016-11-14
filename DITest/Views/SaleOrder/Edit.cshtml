@@ -49,19 +49,6 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" id="btnEdit" data-saleOrderId=@Model.SaleOrderId data-toggle="modal" data-target="#dialogEdit">
-        Edit
-        </button>
-
-        <div class="modal fade" id="dialogEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content" id="editContent">
-                    <div class="editAddress">
-                        <!-- partial view content will be inserted here -->
-                    </div>
-                </div>
-            </div>
-        </div>
         
         @Html.Partial("_SaleOrderItems", Model.SaleOrderItem)
 
@@ -77,7 +64,3 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    <script src="~/Scripts/App/SaleOrder/Edit.js"></script>
-    @Scripts.Render("~/bundles/jqueryval")
-}

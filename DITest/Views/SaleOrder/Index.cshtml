@@ -51,8 +51,29 @@
             @Html.ActionLink("Edit", "Edit", new { saleOrderId = item.SaleOrderId  }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+
+            <button type="button" class="btn btn-primary" id="btnEdit" data-saleOrderId=@item.SaleOrderId data-toggle="modal" data-target="#dialogEdit">
+                Edit
+            </button>
+       
         </td>
     </tr>
 }
 
 </table>
+
+
+<div class="modal fade" id="dialogEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="editContent">
+            <div class="editAddress">
+                <!-- partial view content will be inserted here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/App/SaleOrder/Edit.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

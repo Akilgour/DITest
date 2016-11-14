@@ -35,5 +35,13 @@ namespace DITest.Controllers
             return base.PartialView("_EditAddress", Mapper.Map<SaleOrderDTO, SalesOrder>(service.GetSaleOrderById(saleOrderId)));
         }
 
+        [HttpPost]
+        public ActionResult EditAddress(SalesOrder salesOrder)
+        {
+           var saleOrderDTO = Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder);
+           return RedirectToAction("Index");
+            
+        }
+
     }
 }
