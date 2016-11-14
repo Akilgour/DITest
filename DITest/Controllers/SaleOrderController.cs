@@ -22,7 +22,7 @@ namespace DITest.Controllers
         // GET: SaleOrder
         public ActionResult Index()
         {
-             return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
+            return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
         }
 
         public ActionResult Edit(int saleOrderId)
@@ -38,9 +38,8 @@ namespace DITest.Controllers
         [HttpPost]
         public ActionResult EditAddress(SalesOrder salesOrder)
         {
-           var saleOrderDTO = Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder);
-           return RedirectToAction("Index");
-            
+            service.Save(Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder));
+            return RedirectToAction("Index");
         }
 
     }

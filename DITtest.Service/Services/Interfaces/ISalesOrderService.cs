@@ -7,5 +7,6 @@ namespace DITest.Service.Services.Interfaces
     {
         IEnumerable<SaleOrderDTO> GetAllSaleOrder();
         SaleOrderDTO GetSaleOrderById(int saleOrderId);
+        SaleOrderDTO Save(SaleOrderDTO saleOrderDTO);
     }
 }
