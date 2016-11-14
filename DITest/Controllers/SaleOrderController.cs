@@ -53,5 +53,13 @@ namespace DITest.Controllers
         {
             return PartialView("_RemoveSaleOrder", new SalesOrder() { SaleOrderId = saleOrderId, FullName = fullName });
         }
+
+        [HttpPost]
+        public ActionResult RemoveSaleOrder(SalesOrder salesOrder)
+        {
+            service.Delete(salesOrder.SaleOrderId);
+            return RedirectToAction("Index");
+        }
+
     }
 }
