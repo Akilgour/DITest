@@ -1,5 +1,22 @@
 ﻿$(document).ready(function () {
 
+    $(document).on("click", "#btnCreateDialog", function (e) {
+        $.ajax({
+            url: "/SaleOrder/CreateDialog",
+            datatype: "text",
+            data: { },
+            type: "GET",
+            complete: function () {
+                $("form").each(function () { $.data($(this)[0], 'validator', false); });
+                $.validator.unobtrusive.parse("form");
+            }
+        })
+        .done(function (partialViewResult) {
+            $(".editAddress").html(partialViewResult);
+        });
+    });
+
+
     $(document).on("click", "#btnEdit", function (e) {
         $.ajax({
             url: "/SaleOrder/EditAddress",

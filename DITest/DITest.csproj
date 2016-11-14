@@ -290,6 +290,7 @@
     <Content Include="Views\SaleOrder\_EditAddress.cshtml" />
     <Content Include="Views\SaleOrder\_RemoveSaleOrder.cshtml" />
     <Content Include="Views\SaleOrder\Create.cshtml" />
+    <Content Include="Views\SaleOrder\_CreateDialog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

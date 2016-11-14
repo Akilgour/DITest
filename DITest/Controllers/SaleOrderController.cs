@@ -30,13 +30,25 @@ namespace DITest.Controllers
             return View(Mapper.Map<SaleOrderDTO, SalesOrder>(service.GetSaleOrderById(saleOrderId)));
         }
 
-        public ActionResult Create( )
+        public ActionResult Create()
         {
             return View(new SalesOrder());
         }
 
         [HttpPost]
         public ActionResult Create(SalesOrder salesOrder)
+        {
+            service.Save(Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder));
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult CreateDialog()
+        {
+            return base.PartialView("_CreateDialog", new SalesOrder());
+        }
+
+        [HttpPost]
+        public ActionResult CreateDialog(SalesOrder salesOrder)
         {
             service.Save(Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder));
             return RedirectToAction("Index");
