@@ -288,6 +288,7 @@
     <Content Include="Views\SaleOrder\_SaleOrderItems.cshtml" />
     <Content Include="Views\SaleOrder\Edit.cshtml" />
     <Content Include="Views\SaleOrder\_EditAddress.cshtml" />
+    <Content Include="Views\SaleOrder\_RemoveSaleOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

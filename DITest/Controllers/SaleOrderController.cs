@@ -42,11 +42,16 @@ namespace DITest.Controllers
             return RedirectToAction("Index");
         }
 
-      
+
         public ActionResult Delete(int saleOrderId)
         {
             service.Delete(saleOrderId);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveSaleOrder(int saleOrderId, string fullName)
+        {
+            return PartialView("_RemoveSaleOrder", new SalesOrder() { SaleOrderId = saleOrderId, FullName = fullName });
         }
     }
 }

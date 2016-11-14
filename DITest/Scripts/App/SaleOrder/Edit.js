@@ -18,4 +18,23 @@
         });
     });
 
+    $(document).on("click", "#btnRemoveSaleOrder", function (e) {
+        $.ajax({
+            url: "/SaleOrder/RemoveSaleOrder",
+            datatype: "text",
+            data: {
+                'saleOrderId': $(this).attr('data-saleOrderId'),
+                'fullName': $(this).attr('data-fullName')
+            },
+            type: "GET",
+            complete: function () {
+                $("form").each(function () { $.data($(this)[0], 'validator', false); });
+                $.validator.unobtrusive.parse("form");
+            }
+        })
+        .done(function (partialViewResult) {
+            $(".editAddress").html(partialViewResult);
+        });
+    });
+
 })
