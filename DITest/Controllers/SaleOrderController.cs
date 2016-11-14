@@ -38,6 +38,7 @@ namespace DITest.Controllers
         [HttpPost]
         public ActionResult Create(SalesOrder salesOrder)
         {
+            service.Save(Mapper.Map<SalesOrder, SaleOrderDTO>(salesOrder));
             return RedirectToAction("Index");
         }
 
