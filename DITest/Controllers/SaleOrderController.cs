@@ -42,5 +42,11 @@ namespace DITest.Controllers
             return RedirectToAction("Index");
         }
 
+      
+        public ActionResult Delete(int saleOrderId)
+        {
+            service.Delete(saleOrderId);
+            return RedirectToAction("Index");
+        }
     }
 }

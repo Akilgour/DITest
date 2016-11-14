@@ -37,5 +37,12 @@ namespace DITest.Service.Services
             context.SaveChanges();
             return saleOrderDTO;
         }
+
+        public void Delete(int saleOrderId)
+        {
+            context.Set<SaleOrderDTO>().Remove(context.SaleOrder.Single(x => x.SaleOrderId == saleOrderId));
+            context.SaveChanges();
+        }
+
     }
 }

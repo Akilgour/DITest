@@ -30,35 +30,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaleOrderId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddressLineOne)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddressLineTwo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullAddress)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { saleOrderId = item.SaleOrderId  }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaleOrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLineOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLineTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullAddress)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { saleOrderId = item.SaleOrderId }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { saleOrderId = item.SaleOrderId })
 
-            <button type="button" class="btn btn-primary" id="btnEdit" data-saleOrderId=@item.SaleOrderId data-toggle="modal" data-target="#dialogEdit">
-                Edit
-            </button>
-       
-        </td>
-    </tr>
-}
+                <button type="button" class="btn btn-primary" id="btnEdit" data-saleOrderId=@item.SaleOrderId data-toggle="modal" data-target="#dialogEdit">
+                    Edit
+                </button>
+
+            </td>
+        </tr>
+    }
 
 </table>
 
