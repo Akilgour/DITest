@@ -12,7 +12,7 @@
             }
         })
         .done(function (partialViewResult) {
-            $(".editAddress").html(partialViewResult);
+            $(".modal-content").html(partialViewResult);
         });
     });
 
@@ -31,7 +31,7 @@
             }
         })
         .done(function (partialViewResult) {
-            $(".editAddress").html(partialViewResult);
+            $(".modal-content").html(partialViewResult);
         });
     });
 
@@ -50,7 +50,7 @@
             }
         })
         .done(function (partialViewResult) {
-            $(".editAddress").html(partialViewResult);
+            $(".modal-content").html(partialViewResult);
         });
     });
 
