@@ -3,6 +3,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<button type="button" class="btn btn-primary" id="btnAdd" data-saleOrderId=1 data-toggle="modal" data-target="#dialogEdit">
+    Add
+</button>
+
 <table class="table">
     <tr>
         <th>
@@ -41,6 +46,9 @@
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
+            <button type="button" class="btn btn-primary" id="btnEdit" data-saleOrderId=@item.SaleOrderId data-toggle="modal" data-target="#dialogEdit">
+                Edit
+            </button>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })

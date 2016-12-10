@@ -54,4 +54,23 @@
         });
     });
 
+    $(document).on("click", "#btnAdd", function (e) {
+        $.ajax({
+            url: "/SaleOrder/AddSaleOrderItem",
+            datatype: "text",
+            data: {
+                'saleOrderId': $(this).attr('data-saleOrderId')
+            },
+            type: "GET",
+            complete: function () {
+                $("form").each(function () { $.data($(this)[0], 'validator', false); });
+                $.validator.unobtrusive.parse("form");
+            }
+        })
+        .done(function (partialViewResult) {
+            $(".modal-content").html(partialViewResult);
+        });
+    });
+
+
 })

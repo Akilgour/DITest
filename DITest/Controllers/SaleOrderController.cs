@@ -2,6 +2,7 @@
 using DITest.DTO.Models;
 using DITest.Models;
 using DITest.Service.Services.Interfaces;
+using DITtest.Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,20 @@ namespace DITest.Controllers
     public class SaleOrderController : Controller
     {
         private readonly ISalesOrderService service;
+        private readonly ISalesOrderItemService salesOrderItemService;
 
-        public SaleOrderController(ISalesOrderService service)
+        log4net.ILog logger = log4net.LogManager.GetLogger(typeof(SaleOrderController));  //Declaring Log4Net
+
+        public SaleOrderController(ISalesOrderService service, ISalesOrderItemService salesOrderItemService)
         {
             this.service = service;
+            this.salesOrderItemService = salesOrderItemService;
         }
 
         // GET: SaleOrder
         public ActionResult Index()
         {
+            logger.Error("boo");
             return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
         }
 
@@ -85,5 +91,16 @@ namespace DITest.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddSaleOrderItem(int saleOrderId)
+        {
+            return base.PartialView("_AddSaleOrderItem", new SalesOrderItem() { SaleOrderId = saleOrderId });
+        }
+
+        [HttpPost]
+        public ActionResult AddSaleOrderItem(SalesOrderItem SalesOrderItem)
+        {
+            salesOrderItemService.Save(Mapper.Map<SalesOrderItem, SaleOrderItemDTO>(SalesOrderItem));
+            return RedirectToAction("Index");
+        }
     }
 }

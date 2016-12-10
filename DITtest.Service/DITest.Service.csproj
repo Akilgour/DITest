@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Autofac\ServiceModule.cs" />
     <Compile Include="Services\Interfaces\ISalesOrderService.cs" />
+    <Compile Include="Services\Interfaces\ISalesOrderItemService.cs" />
+    <Compile Include="Services\SalesOrderItemService.cs" />
     <Compile Include="Services\SalesOrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
