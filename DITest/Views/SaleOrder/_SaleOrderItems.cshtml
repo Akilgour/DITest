@@ -1,8 +1,21 @@
 ﻿@model IEnumerable<DITest.Models.SalesOrderItem>
 
+@DateTime.Now.ToString("yyyy-MM-ddTHH:mmzzz")
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@Ajax.ActionLink("Update",
+                            "ShowItemList",
+                            new { saleOrderId = 1},
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "itemsList",
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "GET",
+                            },
+                            new { @class = "btn btn-primary" })
+
 
 <button type="button" class="btn btn-primary" id="btnAdd" data-saleOrderId=1 data-toggle="modal" data-target="#dialogEdit">
     Add

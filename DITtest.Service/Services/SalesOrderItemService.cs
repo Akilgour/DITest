@@ -26,5 +26,9 @@ namespace DITtest.Service.Services
             return SaleOrderItemDTO;
         }
 
+        public IEnumerable<SaleOrderItemDTO> GetBySaleOrderId(int saleOrderId)
+        {
+            return context.SaleOrderItem.Where(x => x.SaleOrderId == saleOrderId);
+        }
     }
 }

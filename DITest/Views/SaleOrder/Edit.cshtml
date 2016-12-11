@@ -49,8 +49,27 @@
             </div>
         </div>
 
-        
-        @Html.Partial("_SaleOrderItems", Model.SaleOrderItem)
+        @DateTime.Now.ToString("yyyy-MM-ddTHH:mmzzz")
+
+      
+
+
+        <div id="itemsList">
+
+            @Ajax.ActionLink("Update",
+                            "ShowItemList",
+                            new { saleOrderId = Model.SaleOrderId },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "itemsList",
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "GET",
+                            },
+                            new { @class = "btn btn-primary" })
+
+            @Html.Partial("_SaleOrderItems", Model.SaleOrderItem)
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -67,5 +86,6 @@
 
 @section Scripts {
     <script src="~/Scripts/App/SaleOrder/Edit.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @Scripts.Render("~/bundles/jqueryval")
 }

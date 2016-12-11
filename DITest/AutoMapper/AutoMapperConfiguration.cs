@@ -18,7 +18,7 @@ namespace DITest.AutoMapper
                     .ForMember(dest => dest.FullAddress, opt => opt.MapFrom(src => FullAddress.ResolveCore(src))
                 ).ReverseMap();
 
-                c.CreateMap<SaleOrderItemDTO, SalesOrderItem>();
+                c.CreateMap<SaleOrderItemDTO, SalesOrderItem>().ReverseMap();
             });
         }
     }

@@ -102,5 +102,14 @@ namespace DITest.Controllers
             salesOrderItemService.Save(Mapper.Map<SalesOrderItem, SaleOrderItemDTO>(SalesOrderItem));
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult ShowItemList(int saleOrderId)
+        {
+
+            var list = Mapper.Map<IEnumerable<SaleOrderItemDTO>, IEnumerable<SalesOrderItem>>(salesOrderItemService.GetBySaleOrderId(saleOrderId));
+            return PartialView("_SaleOrderItems", list);
+        }
+
     }
 }
