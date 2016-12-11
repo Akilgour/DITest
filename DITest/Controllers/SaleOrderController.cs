@@ -111,5 +111,10 @@ namespace DITest.Controllers
             return PartialView("_SaleOrderItems", list);
         }
 
+        public ActionResult SaveData(SalesOrderItem d)
+        {
+            return Json(new { success = true });
+
+        }
     }
 }
