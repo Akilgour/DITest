@@ -88,5 +88,8 @@
         return false;
     });
  
-
 })
+
+var ajaxSuccess = function () {
+    alert('this is ajaxSuccess');
+}

@@ -1,10 +1,14 @@
 ﻿@model DITest.Models.SalesOrderItem
 
+@*@using (Ajax.BeginForm("SaveData", "SaleOrder",null,
+    new AjaxOptions() { HttpMethod = "post", OnSuccess = "ajaxSuccess" }
+    ,null
+))*@
 
-@using (Ajax.BeginForm("SaveData", new AjaxOptions()
-{
-   
-}))
+@using (Ajax.BeginForm("SaveData", new AjaxOptions() { HttpMethod = "post", OnSuccess = "ajaxSuccess" }                
+            ))
+
+
 {
 
     @Html.AntiForgeryToken()
