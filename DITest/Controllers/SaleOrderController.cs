@@ -113,8 +113,18 @@ namespace DITest.Controllers
 
         public ActionResult SaveData(SalesOrderItem d)
         {
-            return Json(new { success = true });
 
+            if (ModelState.IsValid)
+            {
+                salesOrderItemService.Save(Mapper.Map<SalesOrderItem, SaleOrderItemDTO>(d));
+                return Json(new { success = true });
+
+            }
+            else
+            {
+                return base.PartialView("_AddSaleOrderItem", d);
+                // return Json(new { success = false });
+            }
         }
     }
 }

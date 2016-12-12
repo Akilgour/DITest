@@ -4,7 +4,7 @@
         $.ajax({
             url: "/SaleOrder/CreateDialog",
             datatype: "text",
-            data: { },
+            data: {},
             type: "GET",
             complete: function () {
                 $("form").each(function () { $.data($(this)[0], 'validator', false); });
@@ -72,6 +72,17 @@
         });
     });
 
+  (function ($) {
+      $.validator.unobtrusive.addValidation = function (selector) {
+          //get the relevant form 
+          var form = $(selector);
+          // delete validator in case someone called form.validate()
+          $(form).removeData("validator");
+          $.validator.unobtrusive.parse(form);
+      }
+  });
+
+
 
     $('form').submit(function () {
         if ($(this).valid()) {
@@ -87,9 +98,45 @@
         }
         return false;
     });
- 
+
 })
 
-var ajaxSuccess = function () {
-    alert('this is ajaxSuccess');
+var ajaxSuccess = function (e) {
+    //alert('this is ajaxSuccess');
+
+    if (e.success) {
+        //alert("good")
+  
+
+        $.ajax({
+            url: "/SaleOrder/ShowItemList",
+            datatype: "text",
+            data: {
+                'saleOrderId': 1
+            },
+            type: "GET",
+            //complete: function () {
+            //    $("form").each(function () { $.data($(this)[0], 'validator', false); });
+            //    $.validator.unobtrusive.parse("form");
+            //}
+        })
+              .done(function (partialViewResult) {
+                  $('#dialogEdit').modal('hide');
+
+                  $("#itemsList").html(partialViewResult);
+              });
+
+
+
+
+
+      //  $(".itemsList").modal('hide');
+        //$('#modal')
+     
+      //  $(".modal-content").hide();
+    } else {
+        alert("bad");
+    }
+
+
 }
