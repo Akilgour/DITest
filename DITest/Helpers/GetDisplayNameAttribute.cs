@@ -9,23 +9,15 @@ namespace DITest.Helpers
 {
     public static class GetDisplayNameAttribute
     {
-        public static string Value(object aaa, string name)
+        public static string Value(object item, string name)
         {
-            var bbb = aaa.GetType();
-            MemberInfo property = bbb.GetProperty(name);
-
-            var attributes = property.GetCustomAttributes(typeof(DisplayNameAttribute), true);
-
-            var attribute = property.GetCustomAttributes(typeof(DisplayNameAttribute), true)
-                  .Cast<DisplayNameAttribute>().SingleOrDefault();
-
-            if (attribute == null)
+            MemberInfo property = item.GetType().GetProperty(name);
+            var displayNameAttribute = property.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().SingleOrDefault();
+            if (displayNameAttribute == null)
             {
                 return name;
             }
-
-            string ccc = attribute.DisplayName;
-            return ccc;
+            return displayNameAttribute.DisplayName;
         }
     }
 }
