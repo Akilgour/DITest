@@ -218,6 +218,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SaleOrderController.cs" />
+    <Compile Include="Controllers\SaleOrderItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,6 +229,8 @@
     <Compile Include="Models\SalesOrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validation\foo.cs" />
+    <Compile Include="Validation\RequiredIfOtherFieldIsNullAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -300,6 +303,7 @@
     <Content Include="Views\SaleOrder\Create.cshtml" />
     <Content Include="Views\SaleOrder\_CreateDialog.cshtml" />
     <Content Include="Views\SaleOrder\_AddSaleOrderItem.cshtml" />
+    <Content Include="Views\SaleOrderItem\AddSaleOrderItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
