@@ -18,7 +18,7 @@ namespace DITest.Models
         public int Cost { get; set; }
         //[RequiredIfOtherFieldIsHasVale("Cost")]
         [DisplayName("Quantity DisplayName")]
-        [foo(20, "Bar", "Baz", ErrorMessage = "The combined minimum length of the Foo, Bar and Baz properties should be longer than 20")]
+        [foo( "Bar", "Baz")]
         public int Quantity { get; set; }
         [DisplayName("Bar DisplayName")]
         public string Bar { get; set; }
