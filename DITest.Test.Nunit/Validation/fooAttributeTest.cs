@@ -25,17 +25,10 @@ namespace DITest.Test.Nunit.Validation
             testModel.PropertyTwo = propertyTwo;
             testModel.PropertyThree = propertyThree;
 
-            //var validationContex = new ValidationContext(testModel);
-            //var foo = new fooAttribute("PropertyOne", "PropertyTwo");
-            //var value = foo.IsValid(1);
-
-          //  var target = new fooAttribute();
             var context = new ValidationContext(testModel);
             var results = new List<ValidationResult>();
 
-          //  var isValid = Validator.TryValidateObject(testModel, context, results);
-
-            var aaa = Validator.TryValidateObject(testModel, context, results , true);
+            Validator.TryValidateObject(testModel, context, results, true);
 
             //Assert
             if (results.Count() == 1)
@@ -47,11 +40,6 @@ namespace DITest.Test.Nunit.Validation
             {
                 Assert.IsTrue(true);
             }
-
-            
-
-         
-           
         }
 
         private class TestModel
