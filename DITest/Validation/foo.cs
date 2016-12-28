@@ -23,7 +23,7 @@ namespace DITest.Validation
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
 
-            if (int.Parse(value.ToString()) != 0) //AK temp
+            if (!IsDefaultValue.Value(value))
             {
                 return ValidationResult.Success;
             }
@@ -31,7 +31,7 @@ namespace DITest.Validation
             {
                 var model = validationContext.ObjectInstance;
                 var propertyValue = GetProperty.Value(model, otherProperty);
-                if (int.Parse(propertyValue.ToString()) != 0) //AK temp
+                if (!IsDefaultValue.Value(propertyValue))
                 {
                     var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
                     var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, otherProperty);

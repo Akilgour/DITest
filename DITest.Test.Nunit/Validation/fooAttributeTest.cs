@@ -44,6 +44,36 @@ namespace DITest.Test.Nunit.Validation
             }
         }
 
+        [TestCase("A", "", "", "a")]
+        [TestCase("", "A", "", "Property Name One must have value, when Property Name Two has value.")]
+        [TestCase("A", "A", "A", "a")]
+        [TestCase("", "", "A", "Property Name Two must have value, when PropertyThree has value.")]
+        public void StringIsValid(string propertyOne, string propertyTwo, string propertyThree, string expected)
+        {
+            //Arrange
+            var testModel = new StringTestModel();
+            testModel.PropertyOne = propertyOne;
+            testModel.PropertyTwo = propertyTwo;
+            testModel.PropertyThree = propertyThree;
+
+            var context = new ValidationContext(testModel);
+            var results = new List<ValidationResult>();
+
+            Validator.TryValidateObject(testModel, context, results, true);
+
+            //Assert
+            if (results.Count() == 1)
+            {
+                var foo = results.First().ErrorMessage;
+                Assert.AreEqual(expected, foo);
+            }
+            else
+            {
+                Assert.IsTrue(true);
+            }
+        }
+
+
         private class IntTestModel
         {
             public IntTestModel()
@@ -56,6 +86,20 @@ namespace DITest.Test.Nunit.Validation
             [DisplayName("Property Name Two")]
             public int PropertyTwo { get; set; }
             public int PropertyThree { get; set; }
+        }
+
+        private class StringTestModel
+        {
+            public StringTestModel()
+            {
+            }
+            [foo("PropertyTwo")]
+            [DisplayName("Property Name One")]
+            public string PropertyOne { get; set; }
+            [foo("PropertyThree")]
+            [DisplayName("Property Name Two")]
+            public string PropertyTwo { get; set; }
+            public string PropertyThree { get; set; }
         }
     }
 }
