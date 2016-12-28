@@ -19,10 +19,10 @@ namespace DITest.Test.Nunit.Validation
         [TestCase(0, 1, 0, "Property Name One must have value, when Property Name Two has value.")]
         [TestCase(1, 1, 1, "a")]
         [TestCase(0, 0, 1, "Property Name Two must have value, when PropertyThree has value.")]
-        public void IsValid(int propertyOne, int propertyTwo, int propertyThree, string expected)
+        public void IntIsValid(int propertyOne, int propertyTwo, int propertyThree, string expected)
         {
             //Arrange
-            var testModel = new TestModel();
+            var testModel = new IntTestModel();
             testModel.PropertyOne = propertyOne;
             testModel.PropertyTwo = propertyTwo;
             testModel.PropertyThree = propertyThree;
@@ -44,9 +44,9 @@ namespace DITest.Test.Nunit.Validation
             }
         }
 
-        private class TestModel
+        private class IntTestModel
         {
-            public TestModel()
+            public IntTestModel()
             {
             }
             [foo("PropertyTwo")]
