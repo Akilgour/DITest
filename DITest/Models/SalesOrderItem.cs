@@ -18,7 +18,7 @@ namespace DITest.Models
         public int Cost { get; set; }
         //[RequiredIfOtherFieldIsHasVale("Cost")]
         [DisplayName("Quantity DisplayName")]
-        [foo( "Bar", "Baz")]
+      //  [foo( "Bar", "Baz")]
         public int Quantity { get; set; }
         [DisplayName("Bar DisplayName")]
         public string Bar { get; set; }

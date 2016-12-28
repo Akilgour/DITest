@@ -15,7 +15,7 @@ namespace DITest.Test.Nunit.Validation
     [TestFixture]
     public class fooAttributeTest
     {
-        [TestCase(1, 0, 0, true)]
+        [TestCase(1, 0, 0, "a")]
         [TestCase(0, 1, 0, "Property Name One must have value, when Property Name Two has value.")]
         public void IsValid(int propertyOne, int propertyTwo, int propertyThree, string expected)
         {
@@ -25,12 +25,33 @@ namespace DITest.Test.Nunit.Validation
             testModel.PropertyTwo = propertyTwo;
             testModel.PropertyThree = propertyThree;
 
-            var validationContex = new ValidationContext(testModel);
-            var foo = new fooAttribute("PropertyOne", "PropertyTwo");
-            var value = foo.IsValid(1);
+            //var validationContex = new ValidationContext(testModel);
+            //var foo = new fooAttribute("PropertyOne", "PropertyTwo");
+            //var value = foo.IsValid(1);
+
+          //  var target = new fooAttribute();
+            var context = new ValidationContext(testModel);
+            var results = new List<ValidationResult>();
+
+          //  var isValid = Validator.TryValidateObject(testModel, context, results);
+
+            var aaa = Validator.TryValidateObject(testModel, context, results , true);
 
             //Assert
-            Assert.AreEqual(expected, value);
+            if (results.Count() == 1)
+            {
+                var foo = results.First().ErrorMessage;
+                Assert.AreEqual(expected, foo);
+            }
+            else
+            {
+                Assert.IsTrue(true);
+            }
+
+            
+
+         
+           
         }
 
         private class TestModel
@@ -38,11 +59,10 @@ namespace DITest.Test.Nunit.Validation
             public TestModel()
             {
             }
-            [foo("PropertyOne", "PropertyTwo")]
+            [foo("PropertyTwo")]
             [DisplayName("Property Name One")]
             public int PropertyOne { get; set; }
             [DisplayName("Property Name Two")]
-            [foo("PropertyTwo", "PropertyThree")]
             public int PropertyTwo { get; set; }
             public int PropertyThree { get; set; }
         }

@@ -14,15 +14,22 @@ namespace DITest.Validation
     public class fooAttribute : ValidationAttribute
     {
 
-        public fooAttribute( params string[] propertyNames)
+        //public fooAttribute( params string[] propertyNames)
+        //{
+        //    this.PropertyNames = propertyNames;
+
+        //}
+
+        public fooAttribute(string a)
         {
-            this.PropertyNames = propertyNames;
-         
+            this.aaa = a;
+
         }
 
         public string[] PropertyNames { get; private set; }
         public int MinLength { get; private set; }
-      
+        public string aaa;
+
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             //var properties = this.PropertyNames.Select(validationContext.ObjectType.GetProperty);
@@ -42,22 +49,44 @@ namespace DITest.Validation
 
 
 
-            var bb = model.GetType().GetProperties().Single(p => p.Name == "Baz");
+            // validationContext.MemberName
 
-            var propertyValue = GetProperty.Value(model, "Baz");
+            if (int.Parse(value.ToString()) != 0) //AK temp
+            {
+                return ValidationResult.Success;
+            }
+            else
+            {
+                 var propertyValue = GetProperty.Value(model, aaa);
 
-            var a1 = GetDisplayNameAttribute.Value(model, "Bar");
-            var a2 = GetDisplayNameAttribute.Value(model, "Baz");
+                if (int.Parse(propertyValue.ToString()) != 0) //AK temp
+                {
+                     var a1 = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
+                     var a2 = GetDisplayNameAttribute.Value(model, aaa);
 
-            return new ValidationResult("bar" + a1 + a2 + propertyValue);
+                    // var a3 = $"{source.FullName } lives at {source.AddressLineOne} {source.AddressLineTwo}";
+
+                    var a4 = "Property Name One must have value, when Property Name Two has value.";
 
 
-            //var totalLength = values.Sum(x => x.Length) + Convert.ToString(value).Length;
-            //if (totalLength < this.MinLength)
-            //{
-            //    return new ValidationResult(this.FormatErrorMessage(validationContext.DisplayName));
-            //}
-            //return null;
+                    return new ValidationResult(a4);
+
+
+                }
+                return ValidationResult.Success;
+
+            }
+
+            //var bb = model.GetType().GetProperties().Single(p => p.Name == "Baz");
+
+            //var propertyValue = GetProperty.Value(model, "Baz");
+
+            //var a1 = GetDisplayNameAttribute.Value(model, "Bar");
+            //var a2 = GetDisplayNameAttribute.Value(model, "Baz");
+
+            //return new ValidationResult("bar" + a1 + a2 + propertyValue);
+
+
         }
 
         //private static object NewMethod(object model, string propertyName)
