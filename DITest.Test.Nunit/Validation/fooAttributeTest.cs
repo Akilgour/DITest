@@ -17,6 +17,8 @@ namespace DITest.Test.Nunit.Validation
     {
         [TestCase(1, 0, 0, "a")]
         [TestCase(0, 1, 0, "Property Name One must have value, when Property Name Two has value.")]
+        [TestCase(1, 1, 1, "a")]
+        [TestCase(0, 0, 1, "Property Name Two must have value, when PropertyThree has value.")]
         public void IsValid(int propertyOne, int propertyTwo, int propertyThree, string expected)
         {
             //Arrange
@@ -50,6 +52,7 @@ namespace DITest.Test.Nunit.Validation
             [foo("PropertyTwo")]
             [DisplayName("Property Name One")]
             public int PropertyOne { get; set; }
+            [foo("PropertyThree")]
             [DisplayName("Property Name Two")]
             public int PropertyTwo { get; set; }
             public int PropertyThree { get; set; }
