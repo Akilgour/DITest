@@ -9,18 +9,15 @@ namespace DITest.Helpers
     {
         public static bool Value(object value)
         {
-            if(value is string)
+            if (value is string)
             {
-                var item = value as string;
-                return string.IsNullOrWhiteSpace(item);
+                return string.IsNullOrWhiteSpace(value as string);
             }
             if (value is int)
             {
-                var item = value as int?;
-                return item == 0;
+                return value as int? == 0;
             }
             return false;
-
         }
     }
 }
