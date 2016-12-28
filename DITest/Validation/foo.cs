@@ -13,17 +13,9 @@ namespace DITest.Validation
 {
     public class fooAttribute : ValidationAttribute
     {
-
-        //public fooAttribute( params string[] propertyNames)
-        //{
-        //    this.PropertyNames = propertyNames;
-
-        //}
-
         public fooAttribute(string a)
         {
             this.aaa = a;
-
         }
 
         public string[] PropertyNames { get; private set; }
@@ -32,24 +24,6 @@ namespace DITest.Validation
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            //var properties = this.PropertyNames.Select(validationContext.ObjectType.GetProperty);
-            //var values = properties.Select(p => p.GetValue(validationContext.ObjectInstance, null)).OfType<string>();
-            //var asdf = this.FormatErrorMessage(validationContext.DisplayName);
-            //var baz = validationContext.ObjectType.GetProperty("Baz");
-
-            //var aaa = string.Format(CultureInfo.CurrentCulture, FormatErrorMessage(validationContext.DisplayName), new[] { baz });
-
-            var model = validationContext.ObjectInstance;
-            //var displayName = validationContext.DisplayName;
-            //var propertyName = model.GetType().GetProperties()
-            //    .Where(p => p.GetCustomAttributes(false).OfType<DisplayAttribute>().Any(a => a.Name == "Baz"))
-            //    .Select(p => p.Name).FirstOrDefault();
-            //if (propertyName == null)
-            //    propertyName = displayName;
-
-
-
-            // validationContext.MemberName
 
             if (int.Parse(value.ToString()) != 0) //AK temp
             {
@@ -57,44 +31,16 @@ namespace DITest.Validation
             }
             else
             {
-                 var propertyValue = GetProperty.Value(model, aaa);
-
+                var model = validationContext.ObjectInstance;
+                var propertyValue = GetProperty.Value(model, aaa);
                 if (int.Parse(propertyValue.ToString()) != 0) //AK temp
                 {
-                     var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
-                     var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, aaa);
+                    var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
+                    var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, aaa);
                     return new ValidationResult($"{memberDisplayName} must have value, when {otherPropertyDisplayName} has value.");
                 }
                 return ValidationResult.Success;
-
             }
-
-            //var bb = model.GetType().GetProperties().Single(p => p.Name == "Baz");
-
-            //var propertyValue = GetProperty.Value(model, "Baz");
-
-            //var a1 = GetDisplayNameAttribute.Value(model, "Bar");
-            //var a2 = GetDisplayNameAttribute.Value(model, "Baz");
-
-            //return new ValidationResult("bar" + a1 + a2 + propertyValue);
-
-
         }
-
-        //private static object NewMethod(object model, string propertyName)
-        //{
-        //    return model.GetType().GetProperty(propertyName).GetValue(model, null);
-        //}
-
-        //private static string GetDisplayNameAttribute(Type  aaa,  string name)
-        //{
-        //  //  var aaa = typeof(SalesOrderItem);
-        //    MemberInfo property = aaa.GetProperty(name);
-
-        //    var attribute = property.GetCustomAttributes(typeof(DisplayNameAttribute), true)
-        //          .Cast<DisplayNameAttribute>().Single();
-        //    string ccc = attribute.DisplayName;
-        //    return ccc;
-        //}
     }
 }
