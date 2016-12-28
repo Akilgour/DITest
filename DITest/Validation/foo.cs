@@ -13,14 +13,12 @@ namespace DITest.Validation
 {
     public class fooAttribute : ValidationAttribute
     {
-        public fooAttribute(string a)
+        public fooAttribute(string otherProperty)
         {
-            this.aaa = a;
+            this.otherProperty = otherProperty;
         }
 
-        public string[] PropertyNames { get; private set; }
-        public int MinLength { get; private set; }
-        public string aaa;
+        public string otherProperty;
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
@@ -32,11 +30,11 @@ namespace DITest.Validation
             else
             {
                 var model = validationContext.ObjectInstance;
-                var propertyValue = GetProperty.Value(model, aaa);
+                var propertyValue = GetProperty.Value(model, otherProperty);
                 if (int.Parse(propertyValue.ToString()) != 0) //AK temp
                 {
                     var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
-                    var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, aaa);
+                    var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, otherProperty);
                     return new ValidationResult($"{memberDisplayName} must have value, when {otherPropertyDisplayName} has value.");
                 }
                 return ValidationResult.Success;
