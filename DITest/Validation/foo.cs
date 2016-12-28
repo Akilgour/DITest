@@ -63,15 +63,7 @@ namespace DITest.Validation
                 {
                      var a1 = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
                      var a2 = GetDisplayNameAttribute.Value(model, aaa);
-
-                    // var a3 = $"{source.FullName } lives at {source.AddressLineOne} {source.AddressLineTwo}";
-
-                    var a4 = "Property Name One must have value, when Property Name Two has value.";
-
-
-                    return new ValidationResult(a4);
-
-
+                    return new ValidationResult($"{a1} must have value, when {a2} has value.");
                 }
                 return ValidationResult.Success;
 
