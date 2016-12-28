@@ -61,9 +61,9 @@ namespace DITest.Validation
 
                 if (int.Parse(propertyValue.ToString()) != 0) //AK temp
                 {
-                     var a1 = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
-                     var a2 = GetDisplayNameAttribute.Value(model, aaa);
-                    return new ValidationResult($"{a1} must have value, when {a2} has value.");
+                     var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
+                     var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, aaa);
+                    return new ValidationResult($"{memberDisplayName} must have value, when {otherPropertyDisplayName} has value.");
                 }
                 return ValidationResult.Success;
 
