@@ -53,6 +53,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Helpers\GetDisplayNameAttributeTest.cs" />
     <Compile Include="Helpers\GetPropertyTest.cs" />
+    <Compile Include="Helpers\IsDefaultValueTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\fooAttributeTest.cs" />
   </ItemGroup>
