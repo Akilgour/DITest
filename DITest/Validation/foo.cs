@@ -30,8 +30,7 @@ namespace DITest.Validation
             else
             {
                 var model = validationContext.ObjectInstance;
-                var propertyValue = GetProperty.Value(model, otherProperty);
-                if (!IsDefaultValue.Value(propertyValue))
+                if (!IsDefaultValue.Value(GetProperty.Value(model, otherProperty)))
                 {
                     var memberDisplayName = GetDisplayNameAttribute.Value(model, validationContext.MemberName);
                     var otherPropertyDisplayName = GetDisplayNameAttribute.Value(model, otherProperty);
