@@ -73,6 +73,32 @@ namespace DITest.Test.Nunit.Validation
             }
         }
 
+        [TestCase(1, "",  "a")]
+        [TestCase(0, "A",  "Property Name One must have value, when Property Name Two has value.")]
+        [TestCase(1, "A",  "a")]
+        public void IntStringIsValid(int propertyOne, string propertyTwo, string expected)
+        {
+            //Arrange
+            var testModel = new IntStringTestModel();
+            testModel.PropertyOne = propertyOne;
+            testModel.PropertyTwo = propertyTwo;
+
+            var context = new ValidationContext(testModel);
+            var results = new List<ValidationResult>();
+
+            Validator.TryValidateObject(testModel, context, results, true);
+
+            //Assert
+            if (results.Count() == 1)
+            {
+                var foo = results.First().ErrorMessage;
+                Assert.AreEqual(expected, foo);
+            }
+            else
+            {
+                Assert.IsTrue(true);
+            }
+        }
 
         private class IntTestModel
         {
@@ -100,6 +126,18 @@ namespace DITest.Test.Nunit.Validation
             [DisplayName("Property Name Two")]
             public string PropertyTwo { get; set; }
             public string PropertyThree { get; set; }
+        }
+
+        private class IntStringTestModel
+        {
+            public IntStringTestModel()
+            {
+            }
+            [foo("PropertyTwo")]
+            [DisplayName("Property Name One")]
+            public int PropertyOne { get; set; }
+            [DisplayName("Property Name Two")]
+            public string PropertyTwo { get; set; }
         }
     }
 }
