@@ -227,6 +227,7 @@
     <Compile Include="Helpers\IsDefaultValue.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LargeObject.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SalesOrder.cs" />
     <Compile Include="Models\SalesOrderItem.cs" />
