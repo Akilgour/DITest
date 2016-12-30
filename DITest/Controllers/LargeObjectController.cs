@@ -35,23 +35,15 @@ namespace DITest.Controllers
         // GET: LargeObject/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new LargeObject());
         }
 
         // POST: LargeObject/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(LargeObject largeObject)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            largeObjectService.Save(Mapper.Map<LargeObject, LargeObjectDTO>(largeObject));
+            return RedirectToAction("Index");
         }
 
         // GET: LargeObject/Edit/5

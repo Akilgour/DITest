@@ -310,6 +310,7 @@
     <Content Include="Views\SaleOrder\_AddSaleOrderItem.cshtml" />
     <Content Include="Views\SaleOrderItem\AddSaleOrderItem.cshtml" />
     <Content Include="Views\LargeObject\Index.cshtml" />
+    <Content Include="Views\LargeObject\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

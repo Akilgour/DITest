@@ -10,5 +10,6 @@ namespace DITtest.Service.Services.Interfaces
     public interface ILargeObjectService
     {
         IEnumerable<LargeObjectDTO> GetAll();
+        void Save(LargeObjectDTO largeObjectDTO);
     }
 }

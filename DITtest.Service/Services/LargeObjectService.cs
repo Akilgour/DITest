@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DITest.DTO.Models;
 using DITest.Repository.Context;
+using System.Data.Entity.Migrations;
 
 namespace DITtest.Service.Services
 {
@@ -21,6 +22,12 @@ namespace DITtest.Service.Services
         public IEnumerable<LargeObjectDTO> GetAll()
         {
             return context.LargeObject.ToList();
+        }
+
+        public void Save(LargeObjectDTO largeObjectDTO)
+        {
+            context.Set<LargeObjectDTO>().AddOrUpdate(largeObjectDTO);
+            context.SaveChanges();
         }
     }
 }
