@@ -236,6 +236,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Validation\foo.cs" />
     <Compile Include="Validation\RequiredIfOtherFieldIsNullAttribute.cs" />
+    <Compile Include="ViewModel\FirstHalfLargeObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -311,6 +312,7 @@
     <Content Include="Views\SaleOrderItem\AddSaleOrderItem.cshtml" />
     <Content Include="Views\LargeObject\Index.cshtml" />
     <Content Include="Views\LargeObject\Create.cshtml" />
+    <Content Include="Views\LargeObject\EditFirstHalfLargeObject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

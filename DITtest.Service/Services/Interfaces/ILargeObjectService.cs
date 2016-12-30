@@ -11,5 +11,6 @@ namespace DITtest.Service.Services.Interfaces
     {
         IEnumerable<LargeObjectDTO> GetAll();
         void Save(LargeObjectDTO largeObjectDTO);
+        LargeObjectDTO GetById(int id);
     }
 }

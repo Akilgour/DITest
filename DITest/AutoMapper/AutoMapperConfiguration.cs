@@ -2,6 +2,7 @@
 using DITest.AutoMapper.SaleOrder;
 using DITest.DTO.Models;
 using DITest.Models;
+using DITest.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace DITest.AutoMapper
 
                 c.CreateMap<SaleOrderItemDTO, SalesOrderItem>().ReverseMap();
                 c.CreateMap<LargeObjectDTO, LargeObject>().ReverseMap();
+                c.CreateMap<LargeObjectDTO, FirstHalfLargeObject>().ReverseMap();
 
             });
         }

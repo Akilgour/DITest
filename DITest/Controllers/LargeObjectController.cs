@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DITest.DTO.Models;
 using DITest.Models;
+using DITest.ViewModel;
 using DITtest.Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -47,25 +48,17 @@ namespace DITest.Controllers
         }
 
         // GET: LargeObject/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditFirstHalfLargeObject(int id)
         {
-            return View();
+            return View(Mapper.Map< LargeObjectDTO , FirstHalfLargeObject > (largeObjectService.GetById(id)));
         }
 
         // POST: LargeObject/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult EditFirstHalfLargeObject(FirstHalfLargeObject largeObject)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            largeObjectService.Save(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject));
+            return RedirectToAction("Index");
         }
 
         // GET: LargeObject/Delete/5

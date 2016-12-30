@@ -24,6 +24,11 @@ namespace DITtest.Service.Services
             return context.LargeObject.ToList();
         }
 
+        public LargeObjectDTO GetById(int id)
+        {
+            return context.LargeObject.Single(x => x.LargeObjectId == id);
+        }
+
         public void Save(LargeObjectDTO largeObjectDTO)
         {
             context.Set<LargeObjectDTO>().AddOrUpdate(largeObjectDTO);
