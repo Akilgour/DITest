@@ -1,0 +1,88 @@
+﻿@model IEnumerable<DITest.Models.LargeObject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyFour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyFive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertySix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertySeven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyEight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyNine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyTen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyFour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyFive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertySix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertySeven)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyEight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyNine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LargeObjectId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LargeObjectId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LargeObjectId })
+        </td>
+    </tr>
+}
+
+</table>

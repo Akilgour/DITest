@@ -309,10 +309,10 @@
     <Content Include="Views\SaleOrder\_CreateDialog.cshtml" />
     <Content Include="Views\SaleOrder\_AddSaleOrderItem.cshtml" />
     <Content Include="Views\SaleOrderItem\AddSaleOrderItem.cshtml" />
+    <Content Include="Views\LargeObject\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LargeObject\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

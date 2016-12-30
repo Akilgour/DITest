@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
+using DITest.DTO.Models;
+using DITest.Models;
+using DITtest.Service.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +12,18 @@ namespace DITest.Controllers
 {
     public class LargeObjectController : Controller
     {
+        private readonly ILargeObjectService largeObjectService;
+
+        public LargeObjectController(ILargeObjectService largeObjectService)
+        {
+            this.largeObjectService = largeObjectService;
+        }
+
+
         // GET: LargeObject
         public ActionResult Index()
         {
-            return View();
+            return View(Mapper.Map<IEnumerable<LargeObjectDTO>, IEnumerable<LargeObject>>(largeObjectService.GetAll()));
         }
 
         // GET: LargeObject/Details/5
