@@ -55,9 +55,12 @@ namespace DITest.Controllers
 
         // POST: LargeObject/Edit/5
         [HttpPost]
-        public ActionResult EditFirstHalfLargeObject(FirstHalfLargeObject largeObject)
+        public ActionResult EditFirstHalfLargeObject(FirstHalfLargeObject largeObject, FormCollection collection)
         {
-            largeObjectService.Save(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject));
+
+            var collectionKeys = collection.AllKeys;
+
+            largeObjectService.SaveFirstHalf(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject), collectionKeys);
             return RedirectToAction("Index");
         }
 
