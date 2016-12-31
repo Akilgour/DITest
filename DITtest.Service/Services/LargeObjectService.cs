@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DITest.DTO.Models;
 using DITest.Repository.Context;
 using System.Data.Entity.Migrations;
+using DITtest.Service.Helpers;
 
 namespace DITtest.Service.Services
 {
@@ -35,84 +36,10 @@ namespace DITtest.Service.Services
             context.SaveChanges();
         }
 
-        public void SaveFirstHalf(LargeObjectDTO largeObjectDTO, string[] collectionKeys)
+        public void SaveFirstHalf(LargeObjectDTO largeObjectDTO, string[] updateFields)
         {
-            //using (var newContext = new DITestContext())
-            //{
-            //    newContext.LargeObject.Attach(largeObjectDTO);
-            //    newContext.Entry(largeObjectDTO).Property(X => X.PropertyOne).IsModified = true;
-            //    newContext.Entry(largeObjectDTO).Property(X => X.PropertyTwo).IsModified = true;
-            //    newContext.SaveChanges();
-            //}
-
-            var oldobj = context.LargeObject.Single(x => x.LargeObjectId == largeObjectDTO.LargeObjectId);
-            context.Entry(oldobj).CurrentValues.SetValues(largeObjectDTO);
-
-
-            foreach (var prop in oldobj.GetType().GetProperties())
-            {
-                context.Entry(oldobj).Property(prop.Name).IsModified = collectionKeys.Contains(prop.Name);
-            }
-
-            // context.Entry(oldobj).Property(u => u.PropertyTwo).IsModified = true;
-
-            // works context.Entry(oldobj).Property(u => u.PropertyTwo).IsModified = false;
-
-
-            context.SaveChanges();
-
-            //var entry = context.Entry(largeObjectDTO);
-            //// Attach user entity and set all properties as modified
-            //entry.State = EntityState.Modified;
-
-            //// Reset modified state on just two properties
-            //entry.Property(u => u.PropertyOne).IsModified = false;
-            //entry.Property(u => u.PropertyTwo).IsModified = false;
-
-            //// Values for ProfilePicture and MemberSince will not be
-            //// included in UPDATE statement sent to database
-            //context.SaveChanges();
-
-
-            //var dbEntityEntry = context.Entry(largeObjectDTO);
-            //foreach (var property in dbEntityEntry.OriginalValues.PropertyNames)
-            //{
-            //    var original = dbEntityEntry.OriginalValues.GetValue<object>(property);
-            //    var current = dbEntityEntry.CurrentValues.GetValue<object>(property);
-            //    if (original != null && !original.Equals(current))
-            //        dbEntityEntry.Property(property).IsModified = true;
-            //}
-
-            //context.Entry(largeObjectDTO).State = EntityState.Modified;
-            //context.Entry(largeObjectDTO).Property(x => x.PropertyTwo).IsModified = false;
-            //context.SaveChanges();
-
-            //using (context)
-            //{
-
-            //    context.LargeObject.Attach(largeObjectDTO);
-
-            //}
-            //       var entry = context.Entry(largeObjectDTO);
-            //  entry.State = EntityState.Modified;
-            //foreach (var name in excluded)
-            //{
-            //    entry.Property(name).IsModified = false;
-            //}
-
-            //entry.Property("PropertyOne").IsModified = false;
-            //entry.Property("PropertyTwo").IsModified = false;
-
-            //  context.Set<LargeObjectDTO>().Attach(largeObjectDTO);
-            ////  context.Set<LargeObjectDTO>().AddOrUpdate(largeObjectDTO);
-            //  context.Entry(largeObjectDTO).Property(X => X.PropertyOne).IsModified = true;
-            //  context.Entry(largeObjectDTO).Property(X => X.PropertyTwo).IsModified = true;
-            //  context.Entry(largeObjectDTO).Property(X => X.PropertyThree).IsModified = true;
-            //  context.Entry(largeObjectDTO).Property(X => X.PropertyFour).IsModified = true;
-            //  context.Entry(largeObjectDTO).Property(X => X.PropertyFive).IsModified = true;
-            //  context.SaveChanges();
-
-
+            var origanalObject = context.LargeObject.Single(x => x.LargeObjectId == largeObjectDTO.LargeObjectId);
+            EFHelpers.NewMethod(context, largeObjectDTO, updateFields, origanalObject);
         }
     }
 }
