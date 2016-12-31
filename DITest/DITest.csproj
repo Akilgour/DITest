@@ -237,6 +237,7 @@
     <Compile Include="Validation\foo.cs" />
     <Compile Include="Validation\RequiredIfOtherFieldIsNullAttribute.cs" />
     <Compile Include="ViewModel\FirstHalfLargeObject.cs" />
+    <Compile Include="ViewModel\SecondHalfLargeObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
