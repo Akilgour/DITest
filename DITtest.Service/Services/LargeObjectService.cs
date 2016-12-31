@@ -39,7 +39,7 @@ namespace DITtest.Service.Services
         public void SaveFirstHalf(LargeObjectDTO largeObjectDTO, string[] updateFields)
         {
             var origanalObject = context.LargeObject.Single(x => x.LargeObjectId == largeObjectDTO.LargeObjectId);
-            EFHelpers.NewMethod(context, largeObjectDTO, updateFields, origanalObject);
+            EFHelpers.UpdateAndSave(context, origanalObject, largeObjectDTO, updateFields);
         }
     }
 }
