@@ -22,7 +22,7 @@ namespace DITest.AutoMapper
                 c.CreateMap<SaleOrderItemDTO, SalesOrderItem>().ReverseMap();
                 c.CreateMap<LargeObjectDTO, LargeObject>().ReverseMap();
                 c.CreateMap<LargeObjectDTO, FirstHalfLargeObject>().ReverseMap();
-
+                c.CreateMap<LargeObjectDTO, SecondHalfLargeObject>().ReverseMap();
             });
         }
     }

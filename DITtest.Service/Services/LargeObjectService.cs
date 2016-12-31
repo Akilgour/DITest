@@ -36,7 +36,7 @@ namespace DITtest.Service.Services
             context.SaveChanges();
         }
 
-        public void SaveFirstHalf(LargeObjectDTO largeObjectDTO, string[] updateFields)
+        public void Update(LargeObjectDTO largeObjectDTO, string[] updateFields)
         {
             var origanalObject = context.LargeObject.Single(x => x.LargeObjectId == largeObjectDTO.LargeObjectId);
             EFHelpers.UpdateAndSave(context, origanalObject, largeObjectDTO, updateFields);

@@ -314,6 +314,7 @@
     <Content Include="Views\LargeObject\Index.cshtml" />
     <Content Include="Views\LargeObject\Create.cshtml" />
     <Content Include="Views\LargeObject\EditFirstHalfLargeObject.cshtml" />
+    <Content Include="Views\LargeObject\EditSecondHalfLargeObject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

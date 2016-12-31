@@ -60,7 +60,20 @@ namespace DITest.Controllers
 
             var collectionKeys = collection.AllKeys;
 
-            largeObjectService.SaveFirstHalf(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject), collectionKeys);
+            largeObjectService.Update(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject), collectionKeys);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult EditSecondHalfLargeObject(int id)
+        {
+            return View(Mapper.Map<LargeObjectDTO, SecondHalfLargeObject>(largeObjectService.GetById(id)));
+        }
+
+        // POST: LargeObject/Edit/5
+        [HttpPost]
+        public ActionResult EditSecondHalfLargeObject(SecondHalfLargeObject secondHalfLargeObject, FormCollection collection)
+        {
+            largeObjectService.Update(Mapper.Map<SecondHalfLargeObject, LargeObjectDTO>(secondHalfLargeObject), collection.AllKeys);
             return RedirectToAction("Index");
         }
 
