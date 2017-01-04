@@ -316,6 +316,7 @@
     <Content Include="Views\LargeObject\EditFirstHalfLargeObject.cshtml" />
     <Content Include="Views\LargeObject\EditSecondHalfLargeObject.cshtml" />
     <Content Include="Views\LargeObject\Details.cshtml" />
+    <Content Include="Views\SaleOrder\IndexDiv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -31,6 +31,13 @@ namespace DITest.Controllers
             return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
         }
 
+        // GET: SaleOrder
+        public ActionResult IndexDiv()
+        {
+            logger.Error("boo");
+            return View(Mapper.Map<IEnumerable<SaleOrderDTO>, IEnumerable<SalesOrder>>(service.GetAllSaleOrder()));
+        }
+
         public ActionResult Edit(int saleOrderId)
         {
             return View(Mapper.Map<SaleOrderDTO, SalesOrder>(service.GetSaleOrderById(saleOrderId)));
