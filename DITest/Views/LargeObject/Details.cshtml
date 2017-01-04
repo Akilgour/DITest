@@ -1,0 +1,99 @@
+﻿@model DITest.Models.LargeObject
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LargeObject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyTwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyThree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyThree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyFour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyFour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyFive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyFive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertySix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertySix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertySeven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertySeven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyEight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyEight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyNine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyNine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyTen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LargeObjectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -30,7 +30,7 @@ namespace DITest.Controllers
         // GET: LargeObject/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(Mapper.Map<LargeObjectDTO, LargeObject>(largeObjectService.GetById(id)));
         }
 
         // GET: LargeObject/Create
