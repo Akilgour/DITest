@@ -10,49 +10,30 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SaleOrderId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddressLineOne)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddressLineTwo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FullAddress)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaleOrderId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddressLineOne)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddressLineTwo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullAddress)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableCell">@Html.DisplayNameFor(model => model.SaleOrderId)</div>
+            <div class="divTableCell">@Html.DisplayNameFor(model => model.FullName)</div>
+            <div class="divTableCell">@Html.DisplayNameFor(model => model.AddressLineOne)</div>
+            <div class="divTableCell">@Html.DisplayNameFor(model => model.AddressLineTwo)</div>
+            <div class="divTableCell">@Html.DisplayNameFor(model => model.FullAddress)</div>
+        </div>
 
-</table>
+
+        @*@foreach (var item in Model)
+                {
+                <div class="divTableRow">
+                    <div class="divTableCell">@Html.DisplayFor(model => item.SaleOrderId)</div>
+                    <div class="divTableCell">@Html.DisplayFor(model => item.FullName)</div>
+                    <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineOne)</div>
+                    <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineTwo)</div>
+                    <div class="divTableCell">@Html.DisplayFor(model => item.FullAddress)</div>
+                </div>
+            }*@
+
+    </div>
+</div>
+
+@*</table>*@
