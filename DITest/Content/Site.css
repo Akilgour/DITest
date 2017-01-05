@@ -54,3 +54,6 @@ textarea {
 .divTableBody {
 	display: table-row-group;
 }
+.divTableRowAltBackgroundColour {
+	background-color: #EEE;
+}

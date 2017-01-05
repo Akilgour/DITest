@@ -3,8 +3,8 @@
     var numItems = $('.divTableRowBackgroundColour').length
     var i = 0;
     while (i < numItems) {
-        $('.divTableRowBackgroundColour').eq(i).css('background-color', 'red')
-        $('.divTableRowBackgroundColour').eq(i + 1).css('background-color', 'blue')
+        $('.divTableRowBackgroundColour').eq(i).addClass('divTableRowAltBackgroundColour')
+        $('.divTableRowBackgroundColour').eq(i + 1).addClass('divTableRowAltBackgroundColour')
         i = i + 4
     }
 })
