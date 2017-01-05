@@ -24,16 +24,16 @@
         </div>
 
 
-     @foreach (var item in Model)
-                {
-                <div class="divTableRow divTableRowBackgroundColour">
-                    <div class="divTableCell">@Html.DisplayFor(model => item.SaleOrderId)</div>
-                    <div class="divTableCell">@Html.DisplayFor(model => item.FullName)</div>
-                    <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineOne)</div>
-                    <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineTwo)</div>
-                    <div class="divTableCell">@Html.DisplayFor(model => item.FullAddress)</div>
-                    <div class="divTableCell"> </div>
-                </div>
+        @foreach (var item in Model)
+        {
+            <div class="divTableRow divTableRowBackgroundColour">
+                <div class="divTableCell">@Html.DisplayFor(model => item.SaleOrderId)</div>
+                <div class="divTableCell">@Html.DisplayFor(model => item.FullName)</div>
+                <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineOne)</div>
+                <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineTwo)</div>
+                <div class="divTableCell">@Html.DisplayFor(model => item.FullAddress)</div>
+                <div class="divTableCell"> </div>
+            </div>
                 <div class="divTableRow divTableRowBackgroundColour">
                     <div class="divTableCell"> </div>
                     <div class="divTableCell"> </div>
@@ -43,14 +43,11 @@
                     <div class="divTableCell"> </div>
 
                 </div>
-     }
+        }
 
     </div>
 </div>
 
 @section Scripts {
-    <script src="~/Scripts/App/SaleOrder/IndexDiv.js"></script>
- 
-
-  
+    <script src="~/Scripts/App/Shared/divTable.js"></script>
 }
