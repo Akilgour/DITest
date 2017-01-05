@@ -26,7 +26,7 @@
 
      @foreach (var item in Model)
                 {
-                <div class="divTableRow">
+                <div class="divTableRow divTableRowBackgroundColour">
                     <div class="divTableCell">@Html.DisplayFor(model => item.SaleOrderId)</div>
                     <div class="divTableCell">@Html.DisplayFor(model => item.FullName)</div>
                     <div class="divTableCell">@Html.DisplayFor(model => item.AddressLineOne)</div>
@@ -34,7 +34,7 @@
                     <div class="divTableCell">@Html.DisplayFor(model => item.FullAddress)</div>
                     <div class="divTableCell"> </div>
                 </div>
-                <div class="divTableRow">
+                <div class="divTableRow divTableRowBackgroundColour">
                     <div class="divTableCell"> </div>
                     <div class="divTableCell"> </div>
                     <div class="divTableCell"> </div>
@@ -48,4 +48,9 @@
     </div>
 </div>
 
-@*</table>*@
+@section Scripts {
+    <script src="~/Scripts/App/SaleOrder/IndexDiv.js"></script>
+ 
+
+  
+}
