@@ -1,13 +1,9 @@
 ﻿using DITest.DTO.Models;
 using DITest.Repository.Context;
 using DITest.Service.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Service.Services
 {
@@ -24,7 +20,6 @@ namespace DITest.Service.Services
         {
             return context.SaleOrder.OrderBy(x => x.FullName).ToList();
         }
-
 
         public SaleOrderDTO GetSaleOrderById(int saleOrderId)
         {
@@ -43,6 +38,5 @@ namespace DITest.Service.Services
             context.Set<SaleOrderDTO>().Remove(context.SaleOrder.Single(x => x.SaleOrderId == saleOrderId));
             context.SaveChanges();
         }
-
     }
 }

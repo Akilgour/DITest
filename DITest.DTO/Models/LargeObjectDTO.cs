@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.DTO.Models
 {
@@ -13,6 +9,7 @@ namespace DITest.DTO.Models
     {
         [Key]
         public int LargeObjectId { get; set; }
+
         public string PropertyOne { get; set; }
         public string PropertyTwo { get; set; }
         public string PropertyThree { get; set; }

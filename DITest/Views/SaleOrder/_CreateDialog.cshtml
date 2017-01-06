@@ -1,10 +1,9 @@
 ﻿@model DITest.Models.SalesOrder
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
 
         <div class="modal-header">
@@ -52,7 +51,6 @@
                 @Html.ValidationMessageFor(model => model.FullAddress, "", new { @class = "text-danger" })
             </div>
         </div>
-
 
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" value="Create"> Save </button>

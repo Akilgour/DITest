@@ -1,14 +1,9 @@
-﻿using NUnit.Framework;
-using System;
+﻿using DITest.Validation;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.ModelBinding;
-using DITest.Validation;
 using System.ComponentModel.DataAnnotations;
-using NSubstitute;
+using System.Linq;
 
 namespace DITest.Test.Nunit.Validation
 {
@@ -73,9 +68,9 @@ namespace DITest.Test.Nunit.Validation
             }
         }
 
-        [TestCase(1, "",  "a")]
-        [TestCase(0, "A",  "Property Name One must have value, when Property Name Two has value.")]
-        [TestCase(1, "A",  "a")]
+        [TestCase(1, "", "a")]
+        [TestCase(0, "A", "Property Name One must have value, when Property Name Two has value.")]
+        [TestCase(1, "A", "a")]
         public void IntStringIsValid(int propertyOne, string propertyTwo, string expected)
         {
             //Arrange
@@ -105,12 +100,15 @@ namespace DITest.Test.Nunit.Validation
             public IntTestModel()
             {
             }
+
             [foo("PropertyTwo")]
             [DisplayName("Property Name One")]
             public int PropertyOne { get; set; }
+
             [foo("PropertyThree")]
             [DisplayName("Property Name Two")]
             public int PropertyTwo { get; set; }
+
             public int PropertyThree { get; set; }
         }
 
@@ -119,12 +117,15 @@ namespace DITest.Test.Nunit.Validation
             public StringTestModel()
             {
             }
+
             [foo("PropertyTwo")]
             [DisplayName("Property Name One")]
             public string PropertyOne { get; set; }
+
             [foo("PropertyThree")]
             [DisplayName("Property Name Two")]
             public string PropertyTwo { get; set; }
+
             public string PropertyThree { get; set; }
         }
 
@@ -133,9 +134,11 @@ namespace DITest.Test.Nunit.Validation
             public IntStringTestModel()
             {
             }
+
             [foo("PropertyTwo")]
             [DisplayName("Property Name One")]
             public int PropertyOne { get; set; }
+
             [DisplayName("Property Name Two")]
             public string PropertyTwo { get; set; }
         }

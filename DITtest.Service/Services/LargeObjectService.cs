@@ -1,13 +1,10 @@
-﻿using DITtest.Service.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DITest.DTO.Models;
+﻿using DITest.DTO.Models;
 using DITest.Repository.Context;
-using System.Data.Entity.Migrations;
 using DITtest.Service.Helpers;
+using DITtest.Service.Services.Interfaces;
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
 namespace DITtest.Service.Services
 {

@@ -3,10 +3,7 @@ using DITest.DTO.Models;
 using DITest.Models;
 using DITest.ViewModel;
 using DITtest.Service.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DITest.Controllers
@@ -19,7 +16,6 @@ namespace DITest.Controllers
         {
             this.largeObjectService = largeObjectService;
         }
-
 
         // GET: LargeObject
         public ActionResult Index()
@@ -50,14 +46,13 @@ namespace DITest.Controllers
         // GET: LargeObject/Edit/5
         public ActionResult EditFirstHalfLargeObject(int id)
         {
-            return View(Mapper.Map< LargeObjectDTO , FirstHalfLargeObject > (largeObjectService.GetById(id)));
+            return View(Mapper.Map<LargeObjectDTO, FirstHalfLargeObject>(largeObjectService.GetById(id)));
         }
 
         // POST: LargeObject/Edit/5
         [HttpPost]
         public ActionResult EditFirstHalfLargeObject(FirstHalfLargeObject largeObject, FormCollection collection)
         {
-
             var collectionKeys = collection.AllKeys;
 
             largeObjectService.Update(Mapper.Map<FirstHalfLargeObject, LargeObjectDTO>(largeObject), collectionKeys);

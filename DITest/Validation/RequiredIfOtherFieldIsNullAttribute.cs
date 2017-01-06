@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DITest.Validation
 {
     public class RequiredIfOtherFieldIsHasValeAttribute : ValidationAttribute//, IClientValidatable
     {
         private readonly string _otherProperty;
+
         public RequiredIfOtherFieldIsHasValeAttribute(string otherProperty)
         {
             _otherProperty = otherProperty;
@@ -19,7 +14,6 @@ namespace DITest.Validation
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             return new ValidationResult("foo");
-
 
             //var property = validationContext.ObjectType.GetProperty(_otherProperty);
             //if (property == null)
@@ -46,9 +40,6 @@ namespace DITest.Validation
 
             //return null;
         }
-
-
-
 
         //public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         //{

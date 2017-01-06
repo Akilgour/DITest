@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using DITest.DTO.Models;
+﻿using DITest.DTO.Models;
 
 namespace DITest.AutoMapper.SaleOrder
 {

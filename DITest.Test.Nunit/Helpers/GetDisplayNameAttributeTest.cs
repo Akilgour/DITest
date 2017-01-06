@@ -1,11 +1,6 @@
 ﻿using DITest.Helpers;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Test.Nunit.Helpers
 {
@@ -28,18 +23,18 @@ namespace DITest.Test.Nunit.Helpers
         }
     }
 
-
     public class TestModel
     {
         public TestModel()
         {
         }
+
         [DisplayName("Property Name One")]
         public int PropertyOne { get; set; }
+
         [DisplayName("Property Name Two")]
         public int PropertyTwo { get; set; }
+
         public int PropertyThree { get; set; }
-
     }
-
 }

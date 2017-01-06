@@ -1,15 +1,9 @@
 ﻿using DITest.DTO.Models;
 using DITest.Repository.Context;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Repository.Migrations.SeedData
 {
-
     public static class SaleOrderItem
     {
         public static void Seed(DITestContext context)

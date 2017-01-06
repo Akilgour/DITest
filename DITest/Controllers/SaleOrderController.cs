@@ -3,10 +3,7 @@ using DITest.DTO.Models;
 using DITest.Models;
 using DITest.Service.Services.Interfaces;
 using DITtest.Service.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DITest.Controllers
@@ -16,7 +13,7 @@ namespace DITest.Controllers
         private readonly ISalesOrderService service;
         private readonly ISalesOrderItemService salesOrderItemService;
 
-        log4net.ILog logger = log4net.LogManager.GetLogger(typeof(SaleOrderController));  //Declaring Log4Net
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(SaleOrderController));  //Declaring Log4Net
 
         public SaleOrderController(ISalesOrderService service, ISalesOrderItemService salesOrderItemService)
         {
@@ -79,7 +76,6 @@ namespace DITest.Controllers
             return RedirectToAction("Index");
         }
 
-
         public ActionResult Delete(int saleOrderId)
         {
             service.Delete(saleOrderId);
@@ -110,22 +106,18 @@ namespace DITest.Controllers
             return RedirectToAction("Index");
         }
 
-
         public ActionResult ShowItemList(int saleOrderId)
         {
-
             var list = Mapper.Map<IEnumerable<SaleOrderItemDTO>, IEnumerable<SalesOrderItem>>(salesOrderItemService.GetBySaleOrderId(saleOrderId));
             return PartialView("_SaleOrderItems", list);
         }
 
         public ActionResult SaveData(SalesOrderItem d)
         {
-
             if (ModelState.IsValid)
             {
                 salesOrderItemService.Save(Mapper.Map<SalesOrderItem, SaleOrderItemDTO>(d));
                 return Json(new { success = true });
-
             }
             else
             {

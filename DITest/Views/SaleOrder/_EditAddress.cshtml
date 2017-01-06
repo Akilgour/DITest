@@ -1,10 +1,9 @@
 ﻿@model DITest.Models.SalesOrder
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
 
         <div class="modal-header">
@@ -15,8 +14,7 @@
         @Html.HiddenFor(model => model.FullName)
 
         @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-   
- 
+
         <div class="form-group">
             @Html.LabelFor(model => model.AddressLineOne, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -37,11 +35,8 @@
             <button type="submit" class="btn btn-primary" id="btnSave"> Save </button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
-
     </div>
 }
-
- 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

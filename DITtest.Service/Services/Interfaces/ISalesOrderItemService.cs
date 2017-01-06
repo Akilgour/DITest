@@ -6,6 +6,7 @@ namespace DITtest.Service.Services.Interfaces
     public interface ISalesOrderItemService
     {
         SaleOrderItemDTO Save(SaleOrderItemDTO SaleOrderItemDTO);
-        IEnumerable<SaleOrderItemDTO>  GetBySaleOrderId(int saleOrderId);
+
+        IEnumerable<SaleOrderItemDTO> GetBySaleOrderId(int saleOrderId);
     }
 }

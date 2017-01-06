@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.DTO.Models
 {
@@ -13,6 +9,7 @@ namespace DITest.DTO.Models
     {
         [Key]
         public int SaleOrderId { get; set; }
+
         public string FullName { get; set; }
         public string AddressLineOne { get; set; }
         public string AddressLineTwo { get; set; }

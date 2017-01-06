@@ -1,17 +1,11 @@
 ﻿using DITest.Helpers;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITest.Test.Nunit.Helpers
 {
     [TestFixture]
     public class IsDefaultValueTest
     {
-
         [TestCase(0, true)]
         [TestCase(1, false)]
         [TestCase("A", false)]
@@ -31,6 +25,5 @@ namespace DITest.Test.Nunit.Helpers
             //Assert
             Assert.AreEqual(expected, value);
         }
-
     }
 }

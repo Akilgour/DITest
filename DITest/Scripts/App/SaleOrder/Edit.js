@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-
     $(document).on("click", "#btnCreateDialog", function (e) {
         $.ajax({
             url: "/SaleOrder/CreateDialog",
@@ -15,7 +14,6 @@
             $(".modal-content").html(partialViewResult);
         });
     });
-
 
     $(document).on("click", "#btnEdit", function (e) {
         $.ajax({
@@ -75,15 +73,13 @@
 
   //(function ($) {
   //    $.validator.unobtrusive.addValidation = function (selector) {
-  //        //get the relevant form 
+  //        //get the relevant form
   //        var form = $(selector);
   //        // delete validator in case someone called form.validate()
   //        $(form).removeData("validator");
   //        $.validator.unobtrusive.parse(form);
   //    }
   //});
-
-
 
     $('form').submit(function () {
         if ($(this).valid()) {
@@ -99,7 +95,6 @@
         }
         return false;
     });
-
 })
 
 var ajaxSuccess = function (e) {
@@ -107,7 +102,6 @@ var ajaxSuccess = function (e) {
 
     if (e.success) {
         //alert("good")
-  
 
         $.ajax({
             url: "/SaleOrder/ShowItemList",
@@ -127,17 +121,11 @@ var ajaxSuccess = function (e) {
                   $("#itemsList").html(partialViewResult);
               });
 
-
-
-
-
       //  $(".itemsList").modal('hide');
         //$('#modal')
-     
+
       //  $(".modal-content").hide();
     } else {
         alert("bad");
     }
-
-
 }

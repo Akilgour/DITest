@@ -1,10 +1,5 @@
-﻿using DITest.DTO.Models;
-using DITest.Repository.Context;
-using System;
-using System.Collections.Generic;
+﻿using DITest.Repository.Context;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DITtest.Service.Helpers
 {

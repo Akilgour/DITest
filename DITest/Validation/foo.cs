@@ -1,13 +1,5 @@
 ﻿using DITest.Helpers;
-using DITest.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Web;
 
 namespace DITest.Validation
 {
@@ -22,7 +14,6 @@ namespace DITest.Validation
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-
             if (!IsDefaultValue.Value(value))
             {
                 return ValidationResult.Success;

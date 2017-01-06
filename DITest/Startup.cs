@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(DITest.Startup))]
+
 namespace DITest
 {
     public partial class Startup
