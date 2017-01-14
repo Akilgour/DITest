@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DITest.ViewModel
 {
@@ -11,5 +12,19 @@ namespace DITest.ViewModel
         public int PropertyEight { get; set; }
         public bool PropertyNine { get; set; }
         public Guid PropertyTen { get; set; }
+
+        public List<String> TheList
+        {
+            get
+            {
+                var list = new List<string>();
+                list.Add("foo");
+                list.Add("bar");
+                list.Add("foo bar");
+
+                return list;
+            }
+
+        }
     }
 }
